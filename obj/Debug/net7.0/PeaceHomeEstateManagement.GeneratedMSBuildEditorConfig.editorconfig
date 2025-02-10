@@ -1,0 +1,143 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PeaceHomeEstateManagement
+build_property.RootNamespace = PeaceHomeEstateManagement
+build_property.ProjectDir = /home/abdulrosheed/Folders/PeaceHomeEstateManagement/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/abdulrosheed/Folders/PeaceHomeEstateManagement
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Amenities/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQW1lbml0aWVzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Amenities/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQW1lbml0aWVzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Amenities/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQW1lbml0aWVzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Amenities/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQW1lbml0aWVzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Amenities/GetAllAmenities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQW1lbml0aWVzL0dldEFsbEFtZW5pdGllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Db250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Home/DashBoard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9EYXNoQm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Property/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Property/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Property/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Property/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Property/GetAllProperties.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHkvR2V0QWxsUHJvcGVydGllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/PropertyType/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHlUeXBlL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/PropertyType/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHlUeXBlL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/PropertyType/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHlUeXBlL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/PropertyType/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHlUeXBlL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/PropertyType/GetAllPropertyTypes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvcGVydHlUeXBlL0dldEFsbFByb3BlcnR5VHlwZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/User/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/User/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/User/GetAllUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9HZXRBbGxVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/abdulrosheed/Folders/PeaceHomeEstateManagement/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8dfuxczuib

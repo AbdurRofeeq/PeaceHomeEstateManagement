@@ -1,0 +1,63 @@
+
+@model PeaceHomeEstateManagement.Dto.CreatePropertyTypeDto
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header text-center bg-gradient-success text-white rounded-top">
+                    <h4 class="mb-0">Create Property Type</h4>
+                </div>
+                <div class="card-body p-5">
+                    <!-- Display general ModelState errors if any -->
+                    @if (ViewData.ModelState.ContainsKey(string.Empty) && ViewData.ModelState[string.Empty].Errors.Any())
+                    {
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            @foreach (var error in ViewData.ModelState[string.Empty].Errors)
+                            {
+                                <p class="mb-0"><strong>Error:</strong> @error.ErrorMessage</p>
+                            }
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <!-- Property Type Form -->
+                    <form asp-action="Create" method="post" class="needs-validation" novalidate>
+                        <div class="mb-4">
+                            <label asp-for="Name" class="form-label fw-semibold">Property Type Name</label>
+                            <input asp-for="Name" class="form-control form-control-lg border border-success rounded-pill" placeholder="Enter property type name" />
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-lg text-white rounded-pill" style="background-color: #28a745;">
+                                <i class="bi bi-plus-circle-fill me-2"></i>Create Property Type
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+    .bg-gradient-success {
+        background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    }
+    .card-header h4 {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .alert-warning {
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+        color: #856404;
+    }
+</style>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}

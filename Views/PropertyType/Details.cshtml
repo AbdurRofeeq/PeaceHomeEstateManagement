@@ -1,0 +1,36 @@
+@model PeaceHomeEstateManagement.Dto.PropertyTypeDto
+
+@{
+    ViewBag.Title = "Property Type Details";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4>Property Type Details</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title mb-3">@Model.Name</h5>
+            <hr />
+
+            <div class="mt-4">
+                <h6 class="fw-bold">Associated Properties</h6>
+                @if (Model.Properties != null && Model.Properties.Any())
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var property in Model.Properties)
+                        {
+                            <li class="list-group-item">
+                                <strong>@property.Name</strong> <br />
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">No properties associated with this type.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

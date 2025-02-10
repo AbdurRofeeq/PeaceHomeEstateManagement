@@ -1,0 +1,106 @@
+@model PeaceHomeEstateManagement.Dto.CreatePropertyDto
+
+@{
+    ViewData["Title"] = "Create Property";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Create Property</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Validation Errors -->
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                {
+                                    <li>@error.ErrorMessage</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <!-- Property Name -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Name" class="control-label">Property Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="Enter property name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Description" class="control-label">Description</label>
+                            <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter property description"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <!-- Property Type -->
+                        <div class="form-group mb-3">
+                            <label asp-for="PropertyTypeId" class="control-label">Property Type</label>
+                            <select asp-for="PropertyTypeId" class="form-control" asp-items="@(ViewBag.PropertyTypes as IEnumerable<SelectListItem>)">
+                                <option value="">-- Select Property Type --</option>
+                            </select>
+                            <span asp-validation-for="PropertyTypeId" class="text-danger"></span>
+                        </div>
+
+                        <!-- Amenities -->
+                        <div class="form-group mb-3">
+                            <label asp-for="AmenitiesIds" class="control-label">Select Amenities</label>
+                            <select asp-for="AmenitiesIds" class="form-control" multiple asp-items="@(ViewBag.Amenities as IEnumerable<SelectListItem>)">
+                            </select>
+                            <span asp-validation-for="AmenitiesIds" class="text-danger"></span>
+                        </div>
+ 
+                        <!-- Address -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Address" class="control-label">Address</label>
+                            <textarea asp-for="Address" class="form-control" rows="3" placeholder="Enter property address"></textarea>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <!-- Image Uploads -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Image1File" class="control-label">Image 1</label>
+                            <input asp-for="Image1File" class="form-control" type="file" />
+                            <span asp-validation-for="Image1File" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label asp-for="Image2File" class="control-label">Image 2</label>
+                            <input asp-for="Image2File" class="form-control" type="file" />
+                            <span asp-validation-for="Image2File" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Image3File" class="control-label">Image 3</label>
+                            <input asp-for="Image3File" class="form-control" type="file" />
+                            <span asp-validation-for="Image3File" class="text-danger"></span>
+                        </div>
+
+                        <!-- Video Upload -->
+                        <div class="form-group mb-3">
+                            <label asp-for="VideoFile" class="control-label">Video</label>
+                            <input asp-for="VideoFile" class="form-control" type="file" />
+                            <span asp-validation-for="VideoFile" class="text-danger"></span>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary btn-block">Create Property</button>
+                            <a asp-action="GetAllProperties" class="btn btn-secondary">Back to Property List</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

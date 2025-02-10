@@ -1,0 +1,100 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(to bottom right, #1d3557, #457b9d);
+        }
+        header {
+            background-color: #1d3557;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .about {
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .about h2 {
+            color: #1d3557;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .about p {
+            line-height: 1.8;
+            margin: 10px 0;
+            text-align: justify;
+        }
+        footer {
+            background-color: #1d3557;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #457b9d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            width: 200px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #1d3557;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <section class="about">
+        <h2>Welcome to Our PeaceHome EstateManagement</h2>
+        <p>
+            Our agency is dedicated to providing exceptional services and innovative solutions to our clients. 
+            Located in the heart of the city, we specialize in EstateManagement, and customer engagement. 
+            We aim to simplify experiences while ensuring top-notch quality in every interaction.
+        </p>
+        <p>
+            Our team consists of highly skilled professionals committed to excellence and client satisfaction. 
+            Let us help you get Your Dream Home and enjoy life seamlessly.
+        </p>
+        <p><strong>Address:</strong> 47A Voortrekker Rd, Goodwood, South Africa</p>
+        <!-- Back Button -->
+        <a href="/Home/Index" class="back-button">Back to Home</a>
+    </section>
+    <footer>
+        &copy; 2024 PeaceHome EstateManagement. All rights reserved.
+    </footer>
+</body>
+</html>

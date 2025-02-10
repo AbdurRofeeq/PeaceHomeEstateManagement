@@ -1,0 +1,83 @@
+@model PeaceHomeEstateManagement.Dto.UpdatePropertyDto
+
+@{
+    ViewBag.Title = "Edit Property";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-warning text-white">
+            <h4>Edit Property: @Model.Name</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Property Name</label>
+                    <input asp-for="Name" class="form-control" required />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="4" required></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Images</label>
+                    <input type="file" asp-for="Image1" class="form-control" accept="image/*" />
+                    <input type="file" asp-for="Image2" class="form-control mt-2" accept="image/*" />
+                    <input type="file" asp-for="Image3" class="form-control mt-2" accept="image/*" />
+                    <small class="text-muted">You can upload images for the property (optional).</small>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Video" class="form-label">Video URL</label>
+                    <input asp-for="Video" class="form-control" placeholder="https://example.com/video" />
+                    <span asp-validation-for="Video" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="PropertyTypeId" class="form-label">Property Type</label>
+                    <select asp-for="PropertyTypeId" class="form-select" required>
+                        <option value="">Select Property Type</option>
+                        @foreach (var type in ViewBag.PropertyTypes)
+                        {
+                            if (Model.PropertyTypeId == type.Id)
+                            {
+                                <option value="@type.Id" selected>@type.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@type.Id">@type.Name</option>
+                            }
+                        }
+                    </select>
+                    <span asp-validation-for="PropertyTypeId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Amenities</label>
+                    @foreach (var amenity in ViewBag.Amenities)
+                    {
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input"
+                                   name="AmenitiesIds" 
+                                   value="@amenity.Id" 
+                                   id="amenity-@amenity.Id"
+                                   @(Model.AmenitiesIds.Contains(amenity.Id) ? "checked" : "") />
+                            <label class="form-check-label" for="amenity-@amenity.Id">@amenity.Name</label>
+                        </div>
+                    }
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Update Property</button>
+                    <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

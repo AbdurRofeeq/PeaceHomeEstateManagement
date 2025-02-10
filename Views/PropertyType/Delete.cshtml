@@ -1,0 +1,29 @@
+@model PeaceHomeEstateManagement.Dto.PropertyDto
+
+@{
+    ViewBag.Title = "Delete Property Type";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-danger text-white">
+            <h4>Delete Property Type</h4>
+        </div>
+        <div class="card-body">
+            <p class="lead text-center">Are you sure you want to delete this property type?</p>
+
+            <div class="text-center mb-4">
+                <h5>@Model.Name</h5>
+                <p class="text-muted">@Model.Description</p>
+            </div>
+
+            <div class="text-center">
+                <form asp-action="DeleteConfirmed" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-danger me-2">Delete</button>
+                    <a asp-action="GetAllPropertyTypes" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

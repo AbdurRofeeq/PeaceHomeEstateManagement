@@ -1,0 +1,42 @@
+@model PeaceHomeEstateManagement.Dto.PropertyResponseDto
+
+@{
+    ViewBag.Title = "Delete Property";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-danger text-white">
+            <h4>Confirm Delete Property</h4>
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <p class="lead text-center">Are you sure you want to delete this property?</p>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <dl class="row">
+                            <dt class="col-sm-4">Property Name:</dt>
+                            <dd class="col-sm-8">@Model.Name</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <form asp-action="ConfirmDelete" method="post">
+                        <input type="hidden" asp-for="Id" value="@Model.Id" />
+                        <button type="submit" class="btn btn-danger me-2">Confirm Delete</button>
+                        <a asp-action="GetAllProperties" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning text-center">
+                    <p>Property details not found.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

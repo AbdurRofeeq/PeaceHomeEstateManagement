@@ -1,0 +1,48 @@
+@model IEnumerable<PeaceHomeEstateManagement.Dto.AmenitiesResponseDto>
+
+@{
+    ViewBag.Title = "Amenities List";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+            <h4>Amenities List</h4>
+        </div>
+        <div class="card-body">
+            @if (Model != null && Model.Any())
+            {
+                <table class="table table-hover table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var amenity in Model)
+                        {
+                            <tr>
+                                <td>@amenity.Name</td>
+                                <td class="text-center">
+                                    <a asp-action="Edit" asp-route-id="@amenity.Id" class="btn btn-sm btn-warning">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@amenity.Id" class="btn btn-sm btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-info text-center">
+                    <p>No amenities available.</p>
+                </div>
+            }
+        </div>
+        <div class="card-footer text-end">
+            <a asp-action="Create" class="btn btn-success">Add New Amenity</a>
+        </div>
+    </div>
+</div>

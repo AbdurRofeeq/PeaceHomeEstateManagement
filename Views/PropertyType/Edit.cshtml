@@ -1,0 +1,27 @@
+@model PeaceHomeEstateManagement.Dto.CreatePropertyTypeDto
+
+@{
+    ViewBag.Title = "Edit Property Type";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h4>Edit Property Type</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Property Type Name</label>
+                    <input asp-for="Name" class="form-control" required />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                    <a asp-action="GetAllPropertyTypes" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

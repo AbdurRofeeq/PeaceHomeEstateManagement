@@ -1,0 +1,103 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(to bottom, #06beb6, #48b1bf);
+        }
+        header {
+            background-color: #048ba8;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .contact {
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .contact h2 {
+            color: #048ba8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contact ul li {
+            margin: 10px 0;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .contact ul li strong {
+            color: #048ba8;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #048ba8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            width: 200px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #035f73;
+        }
+        footer {
+            background-color: #048ba8;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <ul>
+            <li><strong>Email:</strong> peacehome@gmail.com</li>
+            <li><strong>Phone:</strong> +123-456-7890</li>
+            <li><strong>Address:</strong> 47A Voortrekker Rd, Goodwood, South Africa</li>
+            <li><strong>Business Hours:</strong> Monday to Friday, 9:00 AM - 6:00 PM</li>
+        </ul>
+        <!-- Back Button -->
+        <a href="/Home/Index" class="back-button">Back to Home</a>
+    </section>
+    <footer>
+        &copy; 2024 PeaceHome EstateManagement. All rights reserved.
+    </footer>
+</body>
+</html>
