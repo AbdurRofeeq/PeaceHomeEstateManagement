@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/abdulrosheed/Folders/PeaceHomeEstateManagement/PeaceHomeEstateManagement.csproj": {}
+    "C:\\Users\\Private\\PeaceHomeEstateManagement\\PeaceHomeEstateManagement.csproj": {}
   },
   "projects": {
-    "/home/abdulrosheed/Folders/PeaceHomeEstateManagement/PeaceHomeEstateManagement.csproj": {
+    "C:\\Users\\Private\\PeaceHomeEstateManagement\\PeaceHomeEstateManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/abdulrosheed/Folders/PeaceHomeEstateManagement/PeaceHomeEstateManagement.csproj",
+        "projectUniqueName": "C:\\Users\\Private\\PeaceHomeEstateManagement\\PeaceHomeEstateManagement.csproj",
         "projectName": "PeaceHomeEstateManagement",
-        "projectPath": "/home/abdulrosheed/Folders/PeaceHomeEstateManagement/PeaceHomeEstateManagement.csproj",
-        "packagesPath": "/home/abdulrosheed/.nuget/packages/",
-        "outputPath": "/home/abdulrosheed/Folders/PeaceHomeEstateManagement/obj/",
+        "projectPath": "C:\\Users\\Private\\PeaceHomeEstateManagement\\PeaceHomeEstateManagement.csproj",
+        "packagesPath": "C:\\Users\\Private\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Private\\PeaceHomeEstateManagement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/abdulrosheed/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Private\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -37,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net7.0": {
@@ -51,6 +52,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.27.4, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.13, )"
@@ -62,10 +67,6 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[7.0.13, )"
-            },
-            "MySql.Data.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.22, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
@@ -87,20 +88,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.18, 7.0.18]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[7.0.18, 7.0.18]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.18, 7.0.18]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -109,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.204/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

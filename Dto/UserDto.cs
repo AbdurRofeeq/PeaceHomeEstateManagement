@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace PeaceHomeEstateManagement.Dto
 {
-    public struct CreateUserDto
+    public class CreateUserDto
     {
         public string Email {get; set;}
         public string Password {get; set;}
     }
 
-    public struct UpdateUserDto
+    public class UpdateUserDto
     {
         public Guid Id { get; set; }
         public string Email { get; set; }

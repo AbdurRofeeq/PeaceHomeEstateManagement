@@ -30,6 +30,20 @@ namespace PeaceHomeEstateManagement.Context
             user.SetPassword("peace01"); 
 
             modelBuilder.Entity<User>().HasData(user);
+
+             // Configure the many-to-many relationship
+                modelBuilder.Entity<AmenitiesProperty>()
+                    .HasKey(ap => new { ap.PropertyId, ap.AmenitiesId });
+
+                modelBuilder.Entity<AmenitiesProperty>()
+                    .HasOne(ap => ap.Property)
+                    .WithMany(p => p.AmenitiesProperties)
+                    .HasForeignKey(ap => ap.PropertyId);
+
+                modelBuilder.Entity<AmenitiesProperty>()
+                    .HasOne(ap => ap.Amenities)
+                    .WithMany(a => a.AmenitiesProperties)
+                    .HasForeignKey(ap => ap.AmenitiesId);
         }
     }
 }

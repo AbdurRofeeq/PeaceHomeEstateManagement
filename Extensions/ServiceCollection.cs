@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.EntityFrameworkCore;
+using MySql.EntityFrameworkCore; 
 using PeaceHomeEstateManagement.Context;
 using PeaceHomeEstateManagement.Contract.Repository;
 using PeaceHomeEstateManagement.Contract.Service;
@@ -17,7 +18,7 @@ namespace PeaceHomeEstateManagement.Extensions
         public static IServiceCollection AddContext(this IServiceCollection services, string connectionString)
         {
             return services
-                  .AddDbContext<ApplicationContext>(a => a.UseNpgsql(connectionString));
+                  .AddDbContext<ApplicationContext>(a => a.UseMySQL(connectionString));
         }
 
         public static IServiceCollection AddRepositories(this IServiceCollection services)
@@ -36,7 +37,8 @@ namespace PeaceHomeEstateManagement.Extensions
                    .AddScoped<IPropertyService, PropertyService>()
                    .AddScoped<IPropertyTypeService, PropertyTypeService>()
                    .AddScoped<IUserService, UserService>()
-                   .AddScoped<IBlobStorageService, BlobStorageService>();
+                   .AddScoped<IBlobStorageService, BlobStorageService>()
+                   .AddScoped<ICloudinaryService, CloudinaryService>();
         }
     }
 }

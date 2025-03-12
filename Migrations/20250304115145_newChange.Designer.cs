@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PeaceHomeEstateManagement.Context;
 
 #nullable disable
@@ -12,8 +11,8 @@ using PeaceHomeEstateManagement.Context;
 namespace PeaceHomeEstateManagement.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20241101205915_Initial")]
-    partial class Initial
+    [Migration("20250304115145_newChange")]
+    partial class newChange
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,22 +20,20 @@ namespace PeaceHomeEstateManagement.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.13")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
-
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("PeaceHomeEstateManagement.Models.Amenities", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -45,24 +42,21 @@ namespace PeaceHomeEstateManagement.Migrations
 
             modelBuilder.Entity("PeaceHomeEstateManagement.Models.AmenitiesProperty", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                    b.Property<Guid>("PropertyId")
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("AmenitiesId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
-                    b.Property<Guid>("PropertyId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
+                    b.HasKey("PropertyId", "AmenitiesId");
 
                     b.HasIndex("AmenitiesId");
-
-                    b.HasIndex("PropertyId");
 
                     b.ToTable("AmenitiesProperties");
                 });
@@ -71,41 +65,41 @@ namespace PeaceHomeEstateManagement.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Image1")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Image2")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Image3")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<Guid>("PropertyTypeId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Video")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -118,14 +112,14 @@ namespace PeaceHomeEstateManagement.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -136,18 +130,18 @@ namespace PeaceHomeEstateManagement.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -156,10 +150,10 @@ namespace PeaceHomeEstateManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d22ad429-6923-4c3a-b17e-4deb054ac7e4"),
+                            Id = new Guid("0a8ce797-07fa-4e6c-a320-b0260e278e53"),
                             Email = "peacehome@gmail.com",
                             IsDeleted = false,
-                            PasswordHash = "$2a$11$YOkfwVsd4G8DXLF.sAHu.OaS8hfm5AKL1S6AmA0Pu2uEDZgRkkq56"
+                            PasswordHash = "$2a$11$lYBER1rYiw3V3.YuynjFgOSvDUqal.Zm/FElKaewGZaYv/qhdNm7q"
                         });
                 });
 

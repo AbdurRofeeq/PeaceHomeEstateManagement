@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddContext(builder.Configuration.GetConnectionString("DefaultConnection")!);
+builder.Services.AddContext(builder.Configuration.GetConnectionString("EstateManagementAppString")!);
 builder.Services.AddRepositories();
 builder.Services.AddServices();
 builder.Services.AddSession();

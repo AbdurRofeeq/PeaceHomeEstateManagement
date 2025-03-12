@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PeaceHomeEstateManagement")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40df78f2c34b54eb71ec43f4ac849a8b150e2941")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5888bf11fb91e1382ec9eab88098df8566f8c02")]
 [assembly: System.Reflection.AssemblyProductAttribute("PeaceHomeEstateManagement")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PeaceHomeEstateManagement")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

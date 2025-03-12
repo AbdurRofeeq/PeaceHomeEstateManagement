@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PeaceHomeEstateManagement.Context;
 
@@ -10,9 +11,11 @@ using PeaceHomeEstateManagement.Context;
 namespace PeaceHomeEstateManagement.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20250219133023_Initia")]
+    partial class Initia
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,21 +42,24 @@ namespace PeaceHomeEstateManagement.Migrations
 
             modelBuilder.Entity("PeaceHomeEstateManagement.Models.AmenitiesProperty", b =>
                 {
-                    b.Property<Guid>("PropertyId")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
                     b.Property<Guid>("AmenitiesId")
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("char(36)");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
-                    b.HasKey("PropertyId", "AmenitiesId");
+                    b.Property<Guid>("PropertyId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("AmenitiesId");
+
+                    b.HasIndex("PropertyId");
 
                     b.ToTable("AmenitiesProperties");
                 });
@@ -147,10 +153,10 @@ namespace PeaceHomeEstateManagement.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0a8ce797-07fa-4e6c-a320-b0260e278e53"),
+                            Id = new Guid("7d547a85-b382-420a-aeaf-ecf8751242a7"),
                             Email = "peacehome@gmail.com",
                             IsDeleted = false,
-                            PasswordHash = "$2a$11$lYBER1rYiw3V3.YuynjFgOSvDUqal.Zm/FElKaewGZaYv/qhdNm7q"
+                            PasswordHash = "$2a$11$kELZvTcruUhrWUf.6ss7PO3Why4KWlaidprtOVf4vuRB2GCxhZho6"
                         });
                 });
 
