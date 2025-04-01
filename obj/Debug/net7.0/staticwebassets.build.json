@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bnZt1e+RKIcu1rr+tnn4GHjA2B3tlVJBcBoiO7xp4CA=",
+  "Hash": "7hMNbd2Z3SmMXEzgxLgGo8FyXaPhDiEtgAvNzoxjh+U=",
   "Source": "PeaceHomeEstateManagement",
   "BasePath": "_content/PeaceHomeEstateManagement",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "ci869kishg",
-      "Integrity": "bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8=",
+      "Fingerprint": "10w8ougej7",
+      "Integrity": "/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Private\\PeaceHomeEstateManagement\\obj\\Debug\\net7.0\\scopedcss\\bundle\\PeaceHomeEstateManagement.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "ci869kishg",
-      "Integrity": "bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8=",
+      "Fingerprint": "10w8ougej7",
+      "Integrity": "/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Private\\PeaceHomeEstateManagement\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\PeaceHomeEstateManagement.bundle.scp.css"
@@ -16988,6 +16988,96 @@
       ]
     },
     {
+      "Route": "PeaceHomeEstateManagement.10w8ougej7.bundle.scp.css",
+      "AssetFile": "C:\\Users\\Private\\PeaceHomeEstateManagement\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\PeaceHomeEstateManagement.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1142"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 23 Mar 2025 16:14:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "10w8ougej7"
+        },
+        {
+          "Name": "label",
+          "Value": "PeaceHomeEstateManagement.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU="
+        }
+      ]
+    },
+    {
+      "Route": "PeaceHomeEstateManagement.10w8ougej7.styles.css",
+      "AssetFile": "C:\\Users\\Private\\PeaceHomeEstateManagement\\obj\\Debug\\net7.0\\scopedcss\\bundle\\PeaceHomeEstateManagement.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1142"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 23 Mar 2025 16:14:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "10w8ougej7"
+        },
+        {
+          "Name": "label",
+          "Value": "PeaceHomeEstateManagement.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU="
+        }
+      ]
+    },
+    {
       "Route": "PeaceHomeEstateManagement.bundle.scp.css",
       "AssetFile": "C:\\Users\\Private\\PeaceHomeEstateManagement\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\PeaceHomeEstateManagement.bundle.scp.css",
       "Selectors": [],
@@ -17006,11 +17096,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8=\""
+          "Value": "\"/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 18 Feb 2025 10:12:37 GMT"
+          "Value": "Sun, 23 Mar 2025 16:14:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17020,97 +17110,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8="
-        }
-      ]
-    },
-    {
-      "Route": "PeaceHomeEstateManagement.ci869kishg.bundle.scp.css",
-      "AssetFile": "C:\\Users\\Private\\PeaceHomeEstateManagement\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\PeaceHomeEstateManagement.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1142"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 18 Feb 2025 10:12:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ci869kishg"
-        },
-        {
-          "Name": "label",
-          "Value": "PeaceHomeEstateManagement.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8="
-        }
-      ]
-    },
-    {
-      "Route": "PeaceHomeEstateManagement.ci869kishg.styles.css",
-      "AssetFile": "C:\\Users\\Private\\PeaceHomeEstateManagement\\obj\\Debug\\net7.0\\scopedcss\\bundle\\PeaceHomeEstateManagement.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1142"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 18 Feb 2025 10:12:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ci869kishg"
-        },
-        {
-          "Name": "label",
-          "Value": "PeaceHomeEstateManagement.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8="
+          "Value": "sha256-/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU="
         }
       ]
     },
@@ -17133,11 +17133,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8=\""
+          "Value": "\"/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 18 Feb 2025 10:12:37 GMT"
+          "Value": "Sun, 23 Mar 2025 16:14:00 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -17147,7 +17147,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8="
+          "Value": "sha256-/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU="
         }
       ]
     },

@@ -64,7 +64,7 @@ namespace PeaceHomeEstateManagement.Controllers
             var updateAmenitiesDto = new UpdateAmenitiesDto
             {
                 Id = amenities.Id,
-                Name = amenities.Name
+                Name = amenities.Name ?? string.Empty
             };
 
             return View(updateAmenitiesDto); 

@@ -37,7 +37,6 @@ namespace PeaceHomeEstateManagement.Extensions
                    .AddScoped<IPropertyService, PropertyService>()
                    .AddScoped<IPropertyTypeService, PropertyTypeService>()
                    .AddScoped<IUserService, UserService>()
-                   .AddScoped<IBlobStorageService, BlobStorageService>()
                    .AddScoped<ICloudinaryService, CloudinaryService>();
         }
     }

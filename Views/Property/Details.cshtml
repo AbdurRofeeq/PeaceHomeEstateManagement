@@ -2,82 +2,166 @@
 
 @{
     ViewBag.Title = "Property Details";
+    Layout = null; // Remove this if you're using a shared layout
 }
 
-<div class="container mt-5">
-    <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-            <h4>@Model.Name</h4>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <!-- Images Section -->
-                <div class="col-md-6">
-                    <div id="propertyImagesCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            @if (!string.IsNullOrEmpty(Model.Image1))
-                            {
-                                <div class="carousel-item active">
-                                    <img src="@Model.Image1" class="d-block w-100" alt="Property Image 1">
-                                </div>
-                            }
-                            @if (!string.IsNullOrEmpty(Model.Image2))
-                            {
-                                <div class="carousel-item">
-                                    <img src="@Model.Image2" class="d-block w-100" alt="Property Image 2">
-                                </div>
-                            }
-                            @if (!string.IsNullOrEmpty(Model.Image3))
-                            {
-                                <div class="carousel-item">
-                                    <img src="@Model.Image3" class="d-block w-100" alt="Property Image 3">
-                                </div>
-                            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .embed-responsive {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .embed-responsive-16by9::before {
+            display: block;
+            content: "";
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .embed-responsive-item {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+        }
+
+        .card-footer {
+            background: #f8f9fa;
+        }
+
+        .amenities-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            .amenities-list li {
+                margin-bottom: 5px;
+            }
+
+                .amenities-list li::before {
+                    content: "✔";
+                    color: #28a745;
+                    margin-right: 10px;
+                }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-header text-white text-center py-4">
+                <h2>@Model.Name</h2>
+                <p class="mb-0">Explore the details of this beautiful property</p>
+            </div>
+            <div class="card-body">
+                <!-- Images Carousel -->
+                <div class="row mb-4">
+                    <div class="col-md-8 mx-auto">
+                        <div id="propertyImagesCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                @if (!string.IsNullOrEmpty(Model.Image1))
+                                {
+                                    <div class="carousel-item active">
+                                        <img src="@Model.Image1" class="d-block w-100" alt="Property Image 1">
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.Image2))
+                                {
+                                    <div class="carousel-item">
+                                        <img src="@Model.Image2" class="d-block w-100" alt="Property Image 2">
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.Image3))
+                                {
+                                    <div class="carousel-item">
+                                        <img src="@Model.Image3" class="d-block w-100" alt="Property Image 3">
+                                    </div>
+                                }
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#propertyImagesCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#propertyImagesCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <a class="carousel-control-prev" href="#propertyImagesCarousel" role="button" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#propertyImagesCarousel" role="button" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        </a>
                     </div>
                 </div>
 
                 <!-- Property Details -->
-                <div class="col-md-6">
-                    <dl class="row">
-                        <dt class="col-sm-4">Description:</dt>
-                        <dd class="col-sm-8">@Model.Description</dd>
-                        
-                        <dt class="col-sm-4">Property Type:</dt>
-                        <dd class="col-sm-8">@Model.PropertyType</dd>
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <h4 class="mb-4">Property Details</h4>
+                        <dl class="row">
+                            <dt class="col-sm-4">Description:</dt>
+                            <dd class="col-sm-8">@Model.Description</dd>
 
-                        <dt class="col-sm-4">Amenities:</dt>
-                        <dd class="col-sm-8">
-                            <ul>
-                                @foreach (var amenity in Model.Amenities)
-                                {
-                                    <li>@amenity.Name</li>
-                                }
-                            </ul>
-                        </dd>
-                    </dl>
-                </div>
-            </div>
+                            <dt class="col-sm-4">Property Type:</dt>
+                            <dd class="col-sm-8">@Model.PropertyType</dd>
 
-            <!-- Video Section -->
-            @if (!string.IsNullOrEmpty(Model.Video))
-            {
-                <div class="mt-4">
-                    <h5>Property Video</h5>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="@Model.Video" allowfullscreen></iframe>
+                            <dt class="col-sm-4">Amenities:</dt>
+                            <dd class="col-sm-8">
+                                <ul class="amenities-list">
+                                    @foreach (var amenity in Model.Amenities)
+                                    {
+                                        <li>@amenity.Name</li>
+                                    }
+                                </ul>
+                            </dd>
+                        </dl>
                     </div>
                 </div>
-            }
-        </div>
-        <div class="card-footer text-end">
-            <a asp-action="GetAllProperties" class="btn btn-secondary">Back to List</a>
+
+                <!-- Video Section -->
+                @if (!string.IsNullOrEmpty(Model.Video))
+                {
+                    <div class="row mt-4">
+                        <div class="col-md-8 mx-auto">
+                            <h4 class="mb-3">Property Video</h4>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="@Model.Video" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="card-footer text-end py-3">
+                <a asp-action="GetAllProperties" class="btn btn-secondary">Back to List</a>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

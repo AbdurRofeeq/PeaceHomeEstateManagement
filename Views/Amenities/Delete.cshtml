@@ -1,33 +1,179 @@
+
 @model PeaceHomeEstateManagement.Dto.AmenitiesResponseDto
 
 @{
-    ViewBag.Title = "Delete Amenity";
+    ViewData["Title"] = "Delete Amenity";
+    Layout = null;
 }
 
-<div class="container mt-5">
-    <div class="card shadow-sm">
-        <div class="card-header bg-danger text-white">
-            <h4>Delete Amenity</h4>
-        </div>
-        <div class="card-body">
-            <p class="lead text-center">Are you sure you want to delete this amenity?</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --danger-color: #dc3545;
+            --danger-light: #f8d7da;
+            --secondary-color: #6c757d;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: #212529;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--danger-color), #c82333);
+            border-bottom: none;
+        }
+        
+        .alert-danger {
+            background-color: var(--danger-light);
+            border-color: #f5c2c7;
+            color: #842029;
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, var(--danger-color), #c82333);
+            border: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+        }
+        
+        .back-to-dashboard {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+        
+        .amenity-details {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Dashboard Button -->
+    <div class="back-to-dashboard">
+        <a asp-controller="Home" asp-action="DashBoard" class="btn btn-outline-primary">
+            <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+        </a>
+    </div>
 
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <dl class="row">
-                        <dt class="col-sm-4">Name:</dt>
-                        <dd class="col-sm-8">@Model.Name</dd>
-                    </dl>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-danger">
+                    <!-- Card Header -->
+                    <div class="card-header text-white py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="mb-0">
+                                <i class="fas fa-trash-alt me-2"></i>Delete Amenity
+                            </h4>
+                            <a asp-action="GetAllAmenities" class="text-white">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="card-body p-4">
+                        <!-- Warning Alert -->
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="alert-heading mb-2">Permanent Deletion</h5>
+                                <p class="mb-0">This will permanently remove the amenity from all associated properties.</p>
+                            </div>
+                        </div>
+
+                        <!-- Amenity Details -->
+                        <div class="amenity-details p-4 mb-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-danger bg-opacity-10 p-3 rounded-circle me-3">
+                                    <i class="fas fa-tools text-danger fs-4"></i>
+                                </div>
+                                <div>
+                                    <h3 class="mb-0">@Model.Name</h3>
+                                    <small class="text-muted">Amenity</small>
+                                </div>
+                            </div>
+                                
+                                @if (Model.AmenitiesProperties != null && Model.AmenitiesProperties.Any())
+                                {
+                                    <dt class="col-sm-4 text-muted">Used in:</dt>
+                                    <dd class="col-sm-8">
+                                        @Model.AmenitiesProperties.Count properties
+                                        <span class="badge bg-danger bg-opacity-10 text-danger ms-2">
+                                            <i class="fas fa-exclamation-circle me-1"></i>
+                                            Will be removed
+                                        </span>
+                                    </dd>
+                                }
+                            </dl>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex justify-content-center gap-3">
+                            <form asp-action="Delete" method="post" class="d-inline">
+                                <input type="hidden" asp-for="Id" />
+                                <button type="submit" class="btn btn-danger px-4 py-2">
+                                    <i class="fas fa-trash-alt me-2"></i>Confirm Delete
+                                </button>
+                            </form>
+                            <a asp-action="GetAllAmenities" class="btn btn-outline-secondary px-4 py-2">
+                                <i class="fas fa-times me-2"></i>Cancel
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="text-center">
-                <form asp-action="DeleteConfirmed" method="post">
-                    <input type="hidden" asp-for="Id" value="@Model.Id" />
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                    <a asp-action="GetAllAmenities" class="btn btn-secondary">Cancel</a>
-                </form>
             </div>
         </div>
     </div>
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add animation to card
+        document.addEventListener('DOMContentLoaded', function() {
+            const card = document.querySelector('.card');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.4s ease';
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

@@ -23,6 +23,10 @@ namespace PeaceHomeEstateManagement.Implementation.Service
 
         public async Task<PropertyResponseDto> CreateAsync(CreatePropertyDto createPropertyDto)
         {
+            if (await PropertyNameExistsAsync(createPropertyDto.Name))
+            {
+                 throw new InvalidOperationException("A property with the same name already exists.");
+            }
             var amenities = await _amenitiesRepository.GetListAsync(a => createPropertyDto.AmenitiesIds.Contains(a.Id));
 
             var property = new Property
@@ -131,10 +135,15 @@ namespace PeaceHomeEstateManagement.Implementation.Service
             property.Image3 = updatePropertyDto.Image3;
             property.Video = updatePropertyDto.Video;
             property.PropertyTypeId = updatePropertyDto.PropertyTypeId;
-            property.AmenitiesProperties = amenities.Select(a => new AmenitiesProperty
+            property.AmenitiesProperties.Clear(); // Remove existing relationships
+            foreach (var amenity in amenities)
             {
-                AmenitiesId = a.Id
-            }).ToList();
+                property.AmenitiesProperties.Add(new AmenitiesProperty
+                {
+                    AmenitiesId = amenity.Id,
+                    PropertyId = property.Id 
+                });
+            }
 
             var updatedProperty = await _propertyRepository.UpdateAsync(property);
 
@@ -161,6 +170,12 @@ namespace PeaceHomeEstateManagement.Implementation.Service
         {
             await _propertyRepository.DeleteAsync(id);
         }
+
+        public async Task<bool> PropertyNameExistsAsync(string name)
+        {
+            return await _propertyRepository.AnyAsync(p => p.Name == name);
+        }
+
     }
 
 }

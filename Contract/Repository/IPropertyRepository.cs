@@ -15,6 +15,7 @@ namespace PeaceHomeEstateManagement.Contract.Repository
         Task<PaginatedList<Property>> GetAllAsync(int pageNumber, int pageSize);
         Task<Property> UpdateAsync(Property property);
         Task<Property> GetAsync(Expression<Func<Property, bool>> expression);
+        Task<bool> AnyAsync(Expression<Func<Property, bool>> predicate);
         Task DeleteAsync(Guid id);
     }
 }

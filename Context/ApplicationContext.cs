@@ -31,7 +31,6 @@ namespace PeaceHomeEstateManagement.Context
 
             modelBuilder.Entity<User>().HasData(user);
 
-             // Configure the many-to-many relationship
                 modelBuilder.Entity<AmenitiesProperty>()
                     .HasKey(ap => new { ap.PropertyId, ap.AmenitiesId });
 
@@ -44,6 +43,10 @@ namespace PeaceHomeEstateManagement.Context
                     .HasOne(ap => ap.Amenities)
                     .WithMany(a => a.AmenitiesProperties)
                     .HasForeignKey(ap => ap.AmenitiesId);
+
+                modelBuilder.Entity<Property>()
+                    .HasIndex(p => p.Name)
+                    .IsUnique();
         }
     }
 }

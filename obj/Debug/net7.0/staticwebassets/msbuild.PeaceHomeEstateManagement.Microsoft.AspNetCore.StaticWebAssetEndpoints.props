@@ -1884,17 +1884,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"klofcbnwhb"},{"Name":"integrity","Value":"sha256-SDKDHU0lE3Q1tYhe8x3nqrEl15dwjAM3sEIP0G50RBc="},{"Name":"label","Value":"_content/PeaceHomeEstateManagement/lib/scrollreveal/scrollreveal.min.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9053"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022SDKDHU0lE3Q1tYhe8x3nqrEl15dwjAM3sEIP0G50RBc=\u0022"},{"Name":"Last-Modified","Value":"Tue, 18 Feb 2025 10:12:37 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/PeaceHomeEstateManagement/PeaceHomeEstateManagement.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PeaceHomeEstateManagement.ci869kishg.bundle.scp.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/PeaceHomeEstateManagement/PeaceHomeEstateManagement.10w8ougej7.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PeaceHomeEstateManagement.10w8ougej7.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1142"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 18 Feb 2025 10:12:37 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"10w8ougej7"},{"Name":"integrity","Value":"sha256-/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU="},{"Name":"label","Value":"_content/PeaceHomeEstateManagement/PeaceHomeEstateManagement.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1142"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 23 Mar 2025 16:14:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/PeaceHomeEstateManagement/PeaceHomeEstateManagement.ci869kishg.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PeaceHomeEstateManagement.ci869kishg.bundle.scp.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/PeaceHomeEstateManagement/PeaceHomeEstateManagement.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\PeaceHomeEstateManagement.10w8ougej7.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ci869kishg"},{"Name":"integrity","Value":"sha256-bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8="},{"Name":"label","Value":"_content/PeaceHomeEstateManagement/PeaceHomeEstateManagement.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1142"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022bPagoH5VX/uQGUrTWSHxSx3n/Cxnjz/j5FQnxMm14Q8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 18 Feb 2025 10:12:37 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1142"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/9uLXunEFkqy9ILambV1o9eGjbSmi/S1lPLqq9ST4dU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 23 Mar 2025 16:14:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/PeaceHomeEstateManagement/vendor/animate/animate.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\vendor\animate\animate.css'))</AssetFile>

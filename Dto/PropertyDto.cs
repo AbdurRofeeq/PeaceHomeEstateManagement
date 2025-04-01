@@ -13,7 +13,7 @@ namespace PeaceHomeEstateManagement.Dto
         public Guid PropertyTypeId { get; set; }
         public List<Guid> AmenitiesIds { get; set; } = new List<Guid>();
 
-        // Blob Storage URLs
+        // Storage URLs
         public string Image1 { get; set; }
         public string Image2 { get; set; }
         public string Image3 { get; set; }
@@ -36,7 +36,7 @@ namespace PeaceHomeEstateManagement.Dto
         public string Image3 { get; set; }
         public string Video { get; set; }
         public Guid PropertyTypeId { get; set; }
-        public IList<Guid> AmenitiesIds { get; set; } 
+        public List<Guid> AmenitiesIds { get; set; } = new List<Guid>();
     }
 
     public class PropertyResponseDto
@@ -50,6 +50,7 @@ namespace PeaceHomeEstateManagement.Dto
         public string Image3 { get; set; }
         public string Video { get; set; }
         public string PropertyType { get; set; } 
+        public Guid PropertyTypeId { get; set; }
         public IList<AmenitiesResponseDto> Amenities { get; set; }
     }
 

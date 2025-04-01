@@ -42,11 +42,6 @@ namespace PeaceHomeEstateManagement.Implementation.Service
             {
                 Id = a.Id,
                 Name = a.Name,
-                AmenitiesProperties = a.AmenitiesProperties.Select(ap => new AmenitiesPropertyDto
-                {
-                    PropertyId = ap.PropertyId,
-                    PropertyName = ap.Property.Name
-                }).ToList()
             }).ToList();
         }
 
@@ -59,11 +54,13 @@ namespace PeaceHomeEstateManagement.Implementation.Service
             {
                 Id = amenities.Id,
                 Name = amenities.Name,
-                AmenitiesProperties = amenities.AmenitiesProperties.Select(ap => new AmenitiesPropertyDto
-                {
-                    PropertyId = ap.PropertyId,
-                    PropertyName = ap.Property.Name
-                }).ToList()
+                AmenitiesProperties = amenities.AmenitiesProperties?
+                    .Where(ap => ap.Property != null) // Filter out null Properties
+                    .Select(ap => new AmenitiesPropertyDto
+                    {
+                        PropertyId = ap.PropertyId,
+                        PropertyName = ap.Property?.Name ?? string.Empty // Null-coalescing
+                    }).ToList() ?? new List<AmenitiesPropertyDto>() // Handle null collection
             };
         }
 

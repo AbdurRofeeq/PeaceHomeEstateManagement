@@ -1,8 +1,123 @@
+
 @model PeaceHomeEstateManagement.Dto.UpdatePropertyDto
 
 @{
     ViewBag.Title = "Edit Property";
+    Layout = null;
 }
+
+<style>
+    body {
+        background: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Darker overlay for better readability */
+    }
+    .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 800px;
+    }
+    .card-header {
+        background: linear-gradient(135deg, #ffc107, #ff9800); /* Orange gradient */
+        color: white;
+        text-align: center;
+        padding: 25px;
+        font-size: 1.75rem;
+        font-weight: 600;
+    }
+    .card-body {
+        padding: 30px;
+    }
+    .form-control {
+        border-radius: 10px;
+        padding: 12px;
+        border: 1px solid #ddd;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    .form-control:focus {
+        border-color: #ff9800;
+        box-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
+    }
+    .btn-primary {
+        background: linear-gradient(135deg, #007bff, #00bfff);
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+    }
+    .btn-warning {
+        background: linear-gradient(135deg, #ffc107, #ff9800);
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    .btn-warning:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(255, 193, 7, 0.3);
+    }
+    .btn-danger {
+        background: linear-gradient(135deg, #dc3545, #c82333);
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    .btn-danger:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(220, 53, 69, 0.3);
+    }
+    .btn-secondary {
+        background: #6c757d;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+        background: #5a6268;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(108, 117, 125, 0.3);
+    }
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+<!-- Dark overlay for better readability -->
+<div class="overlay"></div>
 
 <div class="container mt-5">
     <div class="card shadow-sm">
@@ -43,38 +158,55 @@
                     <label asp-for="PropertyTypeId" class="form-label">Property Type</label>
                     <select asp-for="PropertyTypeId" class="form-select" required>
                         <option value="">Select Property Type</option>
-                        @foreach (var type in ViewBag.PropertyTypes)
+                        @if (ViewBag.PropertyTypes != null)
                         {
-                            if (Model.PropertyTypeId == type.Id)
+                            @foreach (var type in ViewBag.PropertyTypes)
                             {
-                                <option value="@type.Id" selected>@type.Name</option>
+                                if (Model.PropertyTypeId == type.Id)
+                                {
+                                    <option value="@type.Id" selected>@type.Name</option>
+                                }
+                                else
+                                {
+                                    <option value="@type.Id">@type.Name</option>
+                                }
                             }
-                            else
-                            {
-                                <option value="@type.Id">@type.Name</option>
-                            }
+                        }
+                        else
+                        {
+                            <p>No property types found.</p>
                         }
                     </select>
                     <span asp-validation-for="PropertyTypeId" class="text-danger"></span>
                 </div>
-
+                
                 <div class="mb-3">
                     <label class="form-label">Amenities</label>
-                    @foreach (var amenity in ViewBag.Amenities)
+                    @if (ViewBag.Amenities != null && ViewBag.Amenities.Count > 0)
                     {
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input"
-                                   name="AmenitiesIds" 
-                                   value="@amenity.Id" 
-                                   id="amenity-@amenity.Id"
-                                   @(Model.AmenitiesIds.Contains(amenity.Id) ? "checked" : "") />
-                            <label class="form-check-label" for="amenity-@amenity.Id">@amenity.Name</label>
-                        </div>
+                        @foreach (var amenity in ViewBag.Amenities)
+                        {
+                            <div class="form-check">
+                                @{
+                                    var isChecked = Model.AmenitiesIds != null && Model.AmenitiesIds.Contains(amenity.Id);
+                                }
+                                <input type="checkbox" class="form-check-input"
+                                    name="AmenitiesIds" 
+                                    value="@amenity.Id" 
+                                    id="amenity-@amenity.Id"
+                                    @(isChecked ? "checked" : "") />
+                                <label class="form-check-label" for="amenity-@amenity.Id">@amenity.Name</label>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>No amenities found.</p>
                     }
                 </div>
 
                 <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary">Update Property</button>
+                    <button type="submit" class="btn btn-warning">Update Property</button>
                     <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary">Cancel</a>
                 </div>
             </form>

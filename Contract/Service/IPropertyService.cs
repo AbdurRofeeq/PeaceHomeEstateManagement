@@ -14,5 +14,6 @@ namespace PeaceHomeEstateManagement.Contract.Service
         Task<PropertyResponseDto?> GetAsync(Guid id);
         Task<PropertyResponseDto?> UpdateAsync(UpdatePropertyDto updatePropertyDto);
         Task DeleteAsync(Guid id);
+        Task<bool> PropertyNameExistsAsync(string name);
     }
 }

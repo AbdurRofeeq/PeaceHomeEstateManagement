@@ -2,26 +2,148 @@
 
 @{
     ViewBag.Title = "Edit Property Type";
+    Layout = null; // Remove this if you're using a shared layout
 }
 
-<div class="container mt-5">
-    <div class="card shadow-sm">
-        <div class="card-header bg-info text-white">
-            <h4>Edit Property Type</h4>
-        </div>
-        <div class="card-body">
-            <form asp-action="Edit" method="post">
-                <div class="mb-3">
-                    <label asp-for="Name" class="form-label">Property Type Name</label>
-                    <input asp-for="Name" class="form-control" required />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Dark overlay for better readability */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
 
-                <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-success">Save Changes</button>
-                    <a asp-action="GetAllPropertyTypes" class="btn btn-secondary">Cancel</a>
-                </div>
-            </form>
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #17a2b8, #138496);
+            padding: 1.5rem;
+            border-bottom: none;
+        }
+
+        .card-header h4 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        /* Form styling */
+        .form-label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-control-lg {
+            font-size: 1.1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .form-control-lg:focus {
+            border-color: #17a2b8;
+            box-shadow: 0 0 5px rgba(23, 162, 184, 0.5);
+        }
+
+        .text-danger {
+            font-size: 0.9rem;
+        }
+
+        /* Button styling */
+        .btn-lg {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #28a745, #218838);
+            border: none;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+        }
+
+        .btn-outline-secondary {
+            border: 2px solid #6c757d;
+            color: #6c757d;
+        }
+
+        .btn-outline-secondary:hover {
+            background: #6c757d;
+            color: #fff;
+        }
+
+        /* Icon spacing */
+        .fas {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark overlay for better readability -->
+    <div class="overlay"></div>
+
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <!-- Card Header -->
+            <div class="card-header text-white">
+                <h4 class="mb-0"><i class="fas fa-edit me-2"></i>Edit Property Type</h4>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body">
+                <form asp-action="Edit" method="post">
+                    <!-- Property Type Name Field -->
+                    <div class="mb-4">
+                        <label asp-for="Name" class="form-label">Property Type Name</label>
+                        <input asp-for="Name" class="form-control form-control-lg" placeholder="Enter property type name" required />
+                        <span asp-validation-for="Name" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-success btn-lg me-3">
+                            <i class="fas fa-save me-2"></i>Save Changes
+                        </button>
+                        <a asp-action="GetAllPropertyTypes" class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-times me-2"></i>Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

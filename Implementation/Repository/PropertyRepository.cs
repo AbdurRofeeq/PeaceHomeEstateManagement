@@ -65,6 +65,13 @@ namespace PeaceHomeEstateManagement.Implementation.Repository
         public async Task<Property> UpdateAsync(Property property)
         {
             _context.Properties.Update(property);
+
+            // Explicitly track changes to AmenitiesProperties
+            foreach (var amenityProperty in property.AmenitiesProperties)
+            {
+                _context.Entry(amenityProperty).State = EntityState.Modified;
+            }
+
             await _context.SaveChangesAsync(); 
             return property;
         }
@@ -78,6 +85,11 @@ namespace PeaceHomeEstateManagement.Implementation.Repository
                 _context.Properties.Update(property); 
                 await _context.SaveChangesAsync(); 
             }
+        }
+
+        public async Task<bool> AnyAsync(Expression<Func<Property, bool>> predicate)
+        {
+            return await _context.Properties.AnyAsync(predicate);
         }
 
     }

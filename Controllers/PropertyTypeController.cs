@@ -52,35 +52,19 @@ namespace PeaceHomeEstateManagement.Controllers
             try
             {
                 var propertyTypeResponse = await _propertyTypeService.CreateAsync(createPropertyTypeDto);
-                return RedirectToAction(nameof(GetAllPropertyTypes));
-                //return RedirectToAction("Create", "Property", new { propertyTypeId = propertyTypeResponse.Id });  
+                return RedirectToAction(nameof(GetAllPropertyTypes)); 
             }
             catch (InvalidOperationException ex)
             {
-                // Add the exception message to ModelState
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
             catch (Exception ex)
             {
-                // General error handling for other unexpected exceptions
                 ModelState.AddModelError(string.Empty, "An unexpected error occurred. Please try again.");
             }
 
             return View(createPropertyTypeDto); 
         }
-
-
-        // [HttpPost]
-        // public async Task<IActionResult> Create(CreatePropertyTypeDto createPropertyTypeDto)
-        // {
-        //     if (!ModelState.IsValid)
-        //     {
-        //         return View(createPropertyTypeDto); 
-        //     }
-
-        //     var propertyTypeResponse = await _propertyTypeService.CreateAsync(createPropertyTypeDto);
-        //     return RedirectToAction("Create", "Property", new {propertyTypeId = propertyTypeResponse.Id});  
-        // }
 
         public async Task<IActionResult> Edit(Guid id)
         {

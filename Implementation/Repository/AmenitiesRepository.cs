@@ -38,6 +38,7 @@ namespace PeaceHomeEstateManagement.Implementation.Repository
         {
             return await _context.Amenities
                 .Include(a => a.AmenitiesProperties)
+                .ThenInclude(ap => ap.Property)
                 .FirstOrDefaultAsync(a => a.Id == id && !a.IsDeleted);
         }
 
